@@ -1,14 +1,13 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom';
+import './HOC.css'
 
 
 const Hoc = () => {
   return (
     <div> <h1>HOC</h1>
-    <div style={{display: "flex",
-                justifyContent:"space-around"}}>
-        <div><Link to='userlist'>UserList</Link></div>
-        <div><Link to='productlist'>ProductList</Link></div>
+    <div className='list-group'>
+        <div><Link className='hoc-route' to='userlist'>UserList</Link></div>
+        <div><Link className='hoc-route' to='productlist'>ProductList</Link></div>
     </div>
     <Outlet/>
     </div>

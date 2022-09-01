@@ -1,21 +1,25 @@
 import React from 'react'
 import './Menu.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
 const Menu = () => {
+  const topics = [{ title: "CSS Grid and Semantic Tags", route: "grid" },
+  { title: "CSS-Preprocessor", route: "" },
+  { title: "Higher Order Component", route: "hoc" },
+  { title: "Forms", route: "form" },
+  { title: "React-Redux", route: "state-management" },
+  { title: "Core JS Concepts", route: "" }
+  ]
   return (
-
     <div className='menu'>
-        <div className="menu-items"><Link to='/grid'><h4>CSS Grid and Semantic Tags</h4></Link></div>
-        <div className="menu-items"><Link to='/'><h4>CSS-Preprocessor</h4></Link></div>
-        <div className="menu-items"><Link to='/hoc'><h4>Higher Order Component</h4></Link></div>
-        <div className="menu-items"><Link to='/form'><h4>Forms</h4></Link></div>
-        <div className="menu-items"><Link to='/state-management'><h4>React-Redux</h4></Link></div>
-        <div className="menu-items"><Link to='/'><h4>Core JS Concepts</h4></Link></div>
+      {topics.map((topic) => {
+        return (
+          <div key={topic.title} className='menu-items'><Link className='menu-route' to={`/${topic.route}`}><h4>{topic.title}</h4></Link></div>
+        )
+      })}
     </div>
-
   )
 }
 

@@ -4,11 +4,14 @@ import { Action } from "../Actions"
 const initialState = 0;
 
 const reducer = (state: number = initialState, action: Action): number => {
-    switch (action.type){
+
+    const {type,payload} = action
+  
+    switch (type){    
         case ActionType.DEPOSIT:
-            return state + action.payload;
+            return state + payload;
         case ActionType.WITHDRAW:
-            return state - action.payload;
+            return state !==0? state - payload:state
         case ActionType.BANKRUPT:
             return 0;
         default:

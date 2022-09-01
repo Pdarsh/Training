@@ -1,5 +1,4 @@
 .container{
-    background-color: azure;
     display: grid;
     grid-template-rows: repeat(5,1fr);
     grid-template-columns: repeat(5,1fr);
@@ -9,44 +8,49 @@
     "footer footer footer footer footer";
     grid-gap: 1em;
     height: 100vh;
+    color: white;
+
 }
 
-nav{
-    background-color: brown;
+.navigation-menu{
     grid-column: 1 / span 5;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 40px;
     grid-template-areas: "Home About Contact Logo";
+    background-color: rgb(141, 101, 163);
 }
 
+.nav-items{
+    text-decoration: none;
+    color: white;
+}
 
 #logo{
     justify-self: end;
-    background-color: aquamarine;
+    text-decoration: none;
 }
 
 
-aside{
+.info{
     grid-column: 1 /span 1;
     grid-row: 2/span 3;
-    background-color: gray;
+    background-color: rgb(158, 122, 250);
 }
 
-main{
+.news-articles{
     grid-row: 2/span 3;
     grid-column: 2 /span 4;
-    background-color: rgb(156, 116, 67);
     display: grid;
     grid-template-rows: repeat(3,1fr);
 }
 
-article {
-    margin: 10px;
-    background-color: wheat;
+.single-article {
+    margin: 2px;
+    background-color: rgb(104, 178, 243);
 }
 
-footer{
-    background-color: brown;
+.footer-menu{
     grid-column: 1 / span 5;
+    background-color: rgb(243, 131, 247);
 }

@@ -6,6 +6,7 @@ import './Form.css'
 
 
 const Form = () => {
+    const date = new Date().toLocaleDateString('en-CA');
     const [inputs, setInputs] = useState<IForm>({
         name: "",
         dob: "",
@@ -15,6 +16,12 @@ const Form = () => {
         university: "",
         checked: false
     });
+    const stateNames = [
+        { value: "rajasthan", label: "Rajasthan" },
+        { value: "gujrat", label: "Gujrat" },
+        { value: "maharashtra", label: "Maharashtra" },
+        { value: "karnataka", label: "Karnataka" }
+    ]
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
         const { value, name, type } = event.target
@@ -38,58 +45,65 @@ const Form = () => {
                     <div className='form-container'>
                         <form onSubmit={handleSubmit}>
                             <label>Name:</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={inputs.name || ""}
-                                    onChange={(event) => handleChange(event)}
-                                />
+                            <input
+                                type="text"
+                                name="name"
+                                value={inputs.name || ""}
+                                onChange={(event) => handleChange(event)}
+                            />
                             <label>DOB:</label>
-                                <input
-                                    type="date"
-                                    name="dob"
-                                    value={inputs.dob}
-                                    onChange={(event) => handleChange(event)}
-                                />
+                            <input
+                                type="date"
+                                name="dob"
+                                value={inputs.dob}
+                                max={date}
+                                onChange={(event) => handleChange(event)}
+                            />
 
                             <label>Email:</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={inputs.email || ""}
-                                    onChange={(event) => handleChange(event)}
-                                />
+                            <input
+                                type="email"
+                                name="email"
+                                pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
+                                value={inputs.email || ""}
+                                onChange={(event) => handleChange(event)}
+                            />
 
                             <label>Password:</label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    value={inputs.password || ""}
-                                    onChange={(event) => handleChange(event)}
-                                />
+                            <input
+                                type="password"
+                                name="password"
+                                value={inputs.password || ""}
+                                onChange={(event) => handleChange(event)}
+                            />
 
                             <label>Sate:</label>
-                                <select name="state"
-                                    onChange={(event) => handleChange(event)}
-                                    value={inputs.state}>
-                                    <option value=""></option>
-                                    <option value="maharashtra">Maharashtra</option>
-                                    <option value="gujrat">Gujrat</option>
-                                    <option value="karnatak">Karnatak</option>
-                                    <option value="rajasthan">Rajasthan</option>
-                                </select>
+                            <select name="state"
+                                onChange={(event) => handleChange(event)}
+                                value={inputs.state}>
+                                {
+                                    stateNames.map((stateName) => {
+                                        return (
+                                            <option value={stateName.value}>{stateName.label}</option>
+                                        )
+                                    })
+                                }
+                            </select>
 
                             <label>University:</label>
-                                <input list="university"
-                                    name="university"
-                                    onChange={(event) => handleChange(event)}
-                                    value={inputs.university} />
-                                <datalist id="university">
-                                    <option value="maharashtra">Maharashtra</option>
-                                    <option value="gujrat">Gujrat</option>
-                                    <option value="karnatak">Karnatak</option>
-                                    <option value="rajasthan">Rajasthan</option>
-                                </datalist>
+                            <input list="university"
+                                name="university"
+                                onChange={(event) => handleChange(event)}
+                                value={inputs.university} />
+                            <datalist id="university">
+                                {
+                                    stateNames.map((stateName) => {
+                                        return (
+                                            <option value={stateName.value}>{stateName.label}</option>
+                                        )
+                                    })
+                                }
+                            </datalist>
 
                             <label>Click if you Agree
                                 <input
@@ -102,11 +116,11 @@ const Form = () => {
                         </form>
                     </div>
                     <div className='benifits'>
-                        <div>Benift 1</div>
-                        <div>Benift 1</div>
-                        <div>Benift 1</div>
-                        <div>Benift 1</div>
-                        <div>Benift 1</div>
+                        <div>Benifit 1</div>
+                        <div>Benifit 2</div>
+                        <div>Benifit 3</div>
+                        <div>Benifit 4</div>
+                        <div>Benifit 5</div>
                     </div>
                 </section>
             </main>

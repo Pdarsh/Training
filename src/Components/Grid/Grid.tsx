@@ -1,22 +1,29 @@
-import React from 'react'
 import './Grid.css'
+import { NavLink } from 'react-router-dom'
+
 
 const Grid = () => {
+    const navitems = ["Home","About","Contact"]
     return (
         <div className='container'>
-            <nav>
-                <a href="#0">Home</a>
-                <a href="#0">About</a>
-                <a href="#0">Contact</a>
-                <a href="#0" id='logo'>Logo</a>
+            <nav className='navigation-menu'>
+                {
+                    navitems.map((navitem) => {
+                        return(
+                            <NavLink to='/' className='nav-items'>{navitem}</NavLink>
+                        )
+                    })
+                }
+                <NavLink to='/' id='logo'> Logo</NavLink>
+
             </nav>
-                <aside>Aside</aside>
-                <main>
-                <article>Ar1</article>
-                <article>Ar2</article>
-                <article>Ar3</article>
+                <aside className='info'>Aside</aside>
+                <main className='news-articles'>
+                <article className='single-article'>Ar1</article>
+                <article className='single-article'>Ar2</article>
+                <article className='single-article'>Ar3</article>
                 </main>
-            <footer>Footer</footer>
+            <footer className='footer-menu'>Footer</footer>
         </div>
     )
 }
