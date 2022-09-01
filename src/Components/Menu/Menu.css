@@ -1,0 +1,15 @@
+.menu{
+    display: flex;
+}
+
+.menu-items{
+    width: 40%;
+    height: 100px;
+    margin: 10px;
+    background-color: blueviolet;
+    color: antiquewhite;
+}
+
+.menu-route{
+    text-decoration: none;
+}

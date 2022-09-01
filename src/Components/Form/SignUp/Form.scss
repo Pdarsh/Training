@@ -1,0 +1,50 @@
+.page-content {
+    .signup-page {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+
+        .page-heading{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+            .form-container {
+                input,
+                label,
+                select{
+                    margin: 2px;
+                    padding: 4px;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    background-color: aliceblue;
+                    height: 500px;
+                    width: 400px;
+                }
+            }
+
+            .benifits{
+                padding: 10px;
+                background-color: aqua;
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 200px;
+            }
+        }
+    }
+}
