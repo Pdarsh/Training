@@ -7,7 +7,7 @@ const CoreJS = () => {
     { title: "Scoping and Hoisting", route: "" },
     { title: "Closures", route: "closure" },
     { title: "Async Await", route: "" },
-    { title: "Defer", route: "" },
+    { title: "Web Storage", route: "web-storage" },
     { title: "Event-Loop", route: "" }
     ]
   return (

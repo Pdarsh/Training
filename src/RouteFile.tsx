@@ -10,6 +10,7 @@ import { IMenu } from './Models/Menu';
 import CoreJS from './Components/CoreJS/CoreJS';
 import Closures from './Components/CoreJS/Closures/Closures';
 import DomManipulation from './Components/CoreJS/DomManipulation/DomManipulation';
+import WebStorage from './Components/CoreJS/WebStorage/WebStorage';
 
 const RouteFile = () => {
 
@@ -37,6 +38,7 @@ const RouteFile = () => {
       <Route path='core-js' element={<CoreJS />}/>
       <Route path='core-js/closure' element={<Closures />} />
       <Route path='core-js/dom-manipulation' element={<DomManipulation />} />
+      <Route path='core-js/web-storage' element={<WebStorage/>}/>
 
     </Routes>
   )
