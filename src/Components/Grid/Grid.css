@@ -1,0 +1,56 @@
+.container{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas: 
+    "nav nav nav nav nav"
+    "aside article article article article"
+    "footer footer footer footer footer";
+    grid-gap: 1em;
+    height: 100vh;
+    color: white;
+
+}
+
+.navigation-menu{
+    grid-column: 1 / span 5;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 40px;
+    grid-template-areas: "Home About Contact Logo";
+    background-color: rgb(141, 101, 163);
+}
+
+.nav-items{
+    text-decoration: none;
+    color: white;
+}
+
+#logo{
+    justify-self: end;
+    text-decoration: none;
+}
+
+
+.info{
+    grid-column: 1 /span 1;
+    grid-row: 2/span 3;
+    background-color: rgb(158, 122, 250);
+}
+
+.news-articles{
+    grid-row: 2/span 3;
+    grid-column: 2 /span 4;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+}
+
+.single-article {
+    margin: 2px;
+    background-color: rgb(104, 178, 243);
+}
+
+.footer-menu{
+    grid-column: 1 / span 5;
+    background-color: rgb(243, 131, 247);
+}
